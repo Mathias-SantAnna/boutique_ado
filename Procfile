@@ -1,0 +1,1 @@
+web: gunicorn voutique_ado.wsgi:application
