@@ -23,13 +23,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-# if os.path.exists('env.py'):
-#     import env
-#     # can override local to False here if you want to test thing like 404, 500 error
-#     DEBUG = True
-# else:
-#     DEBUG = False
-
 ALLOWED_HOSTS = ['m-boutique-ado.herokuapp.com', 'localhost']
 
 
@@ -125,7 +118,6 @@ WSGI_APPLICATION = 'boutique_ado.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 
-
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -180,7 +172,6 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 if 'USE_AWS' in os.environ:
     # Cache control
